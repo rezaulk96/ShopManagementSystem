@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "AssignRole";
+}
+
+<h1 class="display-6 text-center">Role Allocation</h1>
+
+<div class="container">
+
+    <!-- Message -->
+    <div class="row">
+        <div class="col-12">
+            <h5 class="text-primary text-center">@ViewBag.msg</h5>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6">
+            <div class="card p-3 shadow-sm">
+                <form asp-action="AssignRole" asp-controller="Role" method="post">
+
+                    <label>User List</label>
+                    <select name="userData" class="form-select">
+                        <option value="">---Select User---</option>
+                        @foreach (var item in ViewBag.users)
+                        {
+                            <option value="@item.Email">@item.Email</option>
+                        }
+                    </select>
+
+                    <label class="mt-3">Role List</label>
+                    <select name="roleData" class="form-select">
+                        <option value="">---Select Role---</option>
+                        @foreach (var item in ViewBag.roles)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    </select>
+
+                    <button class="btn btn-primary btn-sm mt-3 w-100" type="submit">
+                        Save
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+
+            <table class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th width="200">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.userRoles)
+                    {
+                        <tr>
+                            <td>@item.Email</td>
+                            <td>
+                                @if (item.Roles.Count == 0)
+                                {
+                                    <span class="text-danger">No Role</span>
+                                }
+                                else
+                                {
+                                    @string.Join(", ", item.Roles)
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="Edit"
+                                   asp-route-email="@item.Email"
+                                   class="btn btn-warning btn-sm me-1">
+                                    Edit
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-email="@item.Email"
+                                   class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Remove all roles?')">
+                                    Role Remove
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

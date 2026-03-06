@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model ProductLifting
+
+<div class="justify-content-center">
+    <h1 class="display-6 text-center">Create Product Lifting</h1>
+</div>
+
+<form asp-action="Create" method="post">
+
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            Product Lifting Information
+        </div>
+
+        <div class="card-body">
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="ProductId" class="form-label"></label>
+                    <select asp-for="ProductId"
+                            asp-items="ViewBag.ProductList"
+                            class="form-control">
+                        <option value="">-- Select Product --</option>
+                    </select>
+                    <span asp-validation-for="ProductId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Unit" class="form-label"></label>
+                    <input asp-for="Unit" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="CostPrice" class="form-label"></label>
+                    <input asp-for="CostPrice" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="MRP" class="form-label"></label>
+                    <input asp-for="MRP" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="LiftingDate" class="form-label"></label>
+                    <input asp-for="LiftingDate" type="date" class="form-control" />
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary btn-sm px-4">Save</button>
+        <a asp-action="Index" class="btn btn-secondary btn-sm px-4">Back</a>
+    </div>
+
+</form>

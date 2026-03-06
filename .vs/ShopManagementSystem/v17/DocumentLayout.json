@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|d:\\hr-rezaul karim\\new folder\\shopmanagementsystem\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|d:\\hr-rezaul karim\\new folder\\shopmanagementsystem\\views\\productliftinghistory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|solutionrelative:views\\productliftinghistory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|d:\\hr-rezaul karim\\new folder\\shopmanagementsystem\\controllers\\productliftinghistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|solutionrelative:controllers\\productliftinghistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|d:\\hr-rezaul karim\\new folder\\shopmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{756A8E2A-0A7F-443A-8CA6-299CF5CA722D}|ShopManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAGkAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-03T05:57:56.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-28T05:08:30.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductLiftingHistoryController.cs",
+              "DocumentMoniker": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Controllers\\ProductLiftingHistoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductLiftingHistoryController.cs",
+              "ToolTip": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Controllers\\ProductLiftingHistoryController.cs",
+              "RelativeToolTip": "Controllers\\ProductLiftingHistoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T05:09:29.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Views\\ProductLiftingHistory\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProductLiftingHistory\\Index.cshtml",
+              "ToolTip": "D:\\HR-Rezaul Karim\\New folder\\ShopManagementSystem\\Views\\ProductLiftingHistory\\Index.cshtml",
+              "RelativeToolTip": "Views\\ProductLiftingHistory\\Index.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwCwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-03T05:15:25.925Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IEnumerable<ProductLifting>
+
+<div class="justify-content-center">
+    <h1 class="display-6 text-center">Product Lifting List</h1>
+</div>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-md-10">
+
+        <!-- Button Right Align -->
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-action="Create" class="btn btn-primary btn-sm">
+                Add New Lifting
+            </a>
+        </div>
+
+        <!-- Table -->
+        <table class="table table-bordered table-striped text-center">
+            <thead class="table-light">
+                <tr>
+                    <th width="60">SL</th>
+                    <th>Product</th>
+                    <th>Unit</th>
+                    <th>Cost Price</th>
+                    <th>MRP</th>
+                    <th width="180">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int sl = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@sl</td>
+                        <td>@item.Product.ProductName</td>
+                        <td>@item.Unit</td>
+                        <td>@item.CostPrice</td>
+                        <td>@item.MRP</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ProductLiftingId" class="btn btn-warning btn-sm">Edit</a>
+
+                            <!-- Delete Button triggers modal -->
+                            <button type="button" class="btn btn-danger btn-sm"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal@item.ProductLiftingId">
+                                Delete
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="deleteModal@item.ProductLiftingId" tabindex="-1"
+                                 aria-labelledby="deleteModalLabel@item.ProductLiftingId" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-danger text-white">
+                                            <h5 class="modal-title" id="deleteModalLabel@item.ProductLiftingId">Confirm Delete</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to delete this item?</p>
+                                            <p><strong>Product:</strong> @item.Product.ProductName</p>
+                                            <p><strong>MRP:</strong> @item.MRP</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form asp-action="Delete" method="post">
+                                                <input type="hidden" name="id" value="@item.ProductLiftingId" />
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    sl++;
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@* Previous Structure *@
+@* @model IEnumerable<ProductLifting>
+
+<div class="justify-content-center">
+    <h1 class="display-6 text-center">Product Lifting List</h1>
+</div>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-md-10">
+
+        <!-- Button Right Align -->
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-action="Create" class="btn btn-primary btn-sm">
+                Add New Lifting
+            </a>
+        </div>
+
+        <!-- Table Styled Like Product List -->
+        <table class="table table-bordered table-striped text-center">
+            <thead class="table-light">
+                <tr>
+                    <th width="60">SL</th>
+                    <th>Product</th>
+                    <th>Unit</th>
+                    <th>Cost Price</th>
+                    <th>MRP</th>
+                    <th>Lifting Date</th>
+                    <th width="180">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int sl = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@sl</td>
+                        <td>@item.Product.ProductName</td>
+                        <td>@item.Unit</td>
+                        <td>@item.CostPrice</td>
+                        <td>@item.MRP</td>
+                        <td>@item.LiftingDate.ToString("yyyy-MM-dd")</td>
+                        <td>
+                            <a asp-action="Edit"
+                               asp-route-id="@item.ProductLiftingId"
+                               class="btn btn-warning btn-sm">
+                                Edit
+                            </a>
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.ProductLiftingId"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Delete this lifting record?')">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    sl++;
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div> *@
+

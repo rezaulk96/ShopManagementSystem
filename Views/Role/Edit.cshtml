@@ -1,0 +1,38 @@
+﻿@using ShopManagementSystem.Data
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@model ApplicationUser
+
+<h1 class="display-6 text-center">Edit User Role</h1>
+
+<div class="container">
+
+    <div class="row justify-content-center mt-3">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="text-primary text-center">@ViewBag.msg</h5>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-3 shadow-sm">
+                <form method="post">
+                    <input type="hidden" name="email" value="@Model.Email" />
+
+                    <label>Select New Role</label>
+                    <select name="newRole" class="form-select">
+                        <option>---Select---</option>
+                        @foreach (var role in ViewBag.roles)
+                        {
+                            <option value="@role.Name">@role.Name</option>
+                        }
+                    </select>
+
+                    <button class="btn btn-primary btn-sm mt-2">Update</button>
+                    <a asp-action="AssignRole" class="btn btn-secondary btn-sm mt-2">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

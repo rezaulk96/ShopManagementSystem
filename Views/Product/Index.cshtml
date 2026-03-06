@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<div class="justify-content-center">
+    <h1 class="display-6 text-center">Product List</h1>
+</div>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-md-8">
+
+        <!-- Button Right Align (Citizen style) -->
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-action="Create" class="btn btn-primary btn-sm">
+                Add New Product
+            </a>
+        </div>
+
+        <!-- Table Simple Style (Product style) -->
+        <table class="table table-bordered table-striped text-center">
+            <thead class="table-light">
+                <tr>
+                    <th width="60">SL</th>
+                    <th>Product Name</th>
+                    <th width="160">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int sl = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@sl</td>
+                        <td>@item.ProductName</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ProductId"
+                               class="btn btn-warning btn-sm">Edit</a>
+
+                            <a asp-action="Delete" asp-route-id="@item.ProductId"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Delete this product?')">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    sl++;
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

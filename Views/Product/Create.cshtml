@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<div class="justify-content-center">
+    <h1 class="display-6 text-center">Create New Product</h1>
+</div>
+
+<form asp-action="Create" method="post">
+
+    <div class="card mt-4">
+        <div class="card-header text-center">
+            Product Information
+        </div>
+
+        <div class="card-body">
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="ProductName" class="form-label"></label>
+                    <input asp-for="ProductName" class="form-control" placeholder="Enter Product Name" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary btn-sm px-4">Save</button>
+        <a asp-action="Index" class="btn btn-secondary btn-sm px-4">Back</a>
+    </div>
+
+</form>
+

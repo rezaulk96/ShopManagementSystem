@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IEnumerable<ProductLiftingHistory>
+
+@{
+    ViewData["Title"] = "Product Lifting History";
+}
+
+<div class="card shadow p-3">
+    <h4 class="mb-3 text-center">Product Lifting History</h4>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-primary text-center">
+            <tr>
+                <th>Product</th>
+                <th>Previous Unit</th>
+                <th>Sold Qty</th>
+                <th>Remaining Unit</th>
+                <th>Cost Price</th>
+                <th>MRP</th>
+                <th>Lifting Date</th>
+                <th>Sold Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Product?.ProductName</td>
+                    <td class="text-center">@item.PreviousUnit</td>
+                    <td class="text-center">@item.SoldQuantity</td>
+                    <td class="text-center">@item.RemainingUnit</td>
+                    <td class="text-center">@item.CostPrice.ToString("0.00")</td>
+                    <td class="text-center">@item.MRP.ToString("0.00")</td>
+                    <td class="text-center">@item.LiftingDate.ToString("dd-MM-yyyy")</td>
+                    <td class="text-center">@item.SoldDate.ToString("dd-MM-yyyy hh:mm tt")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <nav>
+        <ul class="pagination pagination-sm justify-content-end">
+
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)">Previous</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="?page=@i">@i</a>
+                </li>
+            }
+
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)">Next</a>
+                </li>
+            }
+
+        </ul>
+    </nav>
+</div>
